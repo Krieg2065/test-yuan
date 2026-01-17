@@ -1,6 +1,7 @@
 FROM python:3.10-slim
 
 WORKDIR /
+# Build with your updated Dockerfile
 
 # Install system dependencies (git is required for pip install git+...)
 RUN apt-get update && apt-get install -y \
@@ -18,3 +19,4 @@ RUN pip install git+https://github.com/Yuan-lab-LLM/Yuan3.0.git
 COPY handler.py /
 
 CMD ["python3", "-u", "handler.py"]
+
